@@ -1,0 +1,42 @@
+.reportCard {
+    padding: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-backdrop-filter: blur(120px) brightness(100%);
+    backdrop-filter: blur(120px) brightness(100%);
+    background: linear-gradient(180deg, rgba(6, 11, 38, 0.74) 0%, rgba(26, 31, 55, 0.5) 100%);
+    border-radius: 20px;
+    height: 80px;
+    width: 25%;
+    min-width: 335px;
+
+    .content {
+        .amount {
+            font-size: 18px;
+            line-height: 140%;
+
+            .growthPercent {
+                font-size: 14px;
+                padding-left: 4px;
+                color: var(--primary-green-500-success-color, #01B574);
+
+                &.negative {
+                    color: var(--primary-red-500-error-color, #E31A1A);
+                }
+            }
+        }
+
+    }
+
+    svg {
+        color: #0075FF;
+        display: inline;
+        padding: 10px;
+        border-radius: 12px;
+        background: #0075FF;
+        box-shadow: 0px 3.5px 5.5px 0px rgba(0, 0, 0, 0.02);
+        transition: all 0.3s ease;
+    }
+}
