@@ -1,4 +1,4 @@
-import Menu from "./menu/Menu";
+import Menu from './menu/Menu';
 
 export default function SideBar() {
   return (

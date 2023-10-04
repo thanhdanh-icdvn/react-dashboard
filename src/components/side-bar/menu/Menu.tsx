@@ -1,50 +1,50 @@
-import clsx from "clsx";
-import IconBilling from "../../icons/IconBilling";
-import IconHome from "../../icons/IconHome";
-import IconSettings from "../../icons/IconSettings";
-import IconSiginUp from "../../icons/IconSiginUp";
-import IconSignIn from "../../icons/IconSignIn";
-import IconTable from "../../icons/IconTable";
-import IconUser from "../../icons/IconUser";
-import MenuItem, { MenuItemProps } from "../menu-item/MenuItem";
+import clsx from 'clsx';
+import IconBilling from '../../icons/IconBilling';
+import IconHome from '../../icons/IconHome';
+import IconSettings from '../../icons/IconSettings';
+import IconSiginUp from '../../icons/IconSiginUp';
+import IconSignIn from '../../icons/IconSignIn';
+import IconTable from '../../icons/IconTable';
+import IconUser from '../../icons/IconUser';
+import MenuItem, { MenuItemProps } from '../menu-item/MenuItem';
 
-import menuStyles from "./Menu.module.scss";
+import menuStyles from './Menu.module.scss';
 
 const menus: MenuItemProps[] = [
   {
-    title: "Dashboard",
+    title: 'Dashboard',
     icon: <IconHome width={16} height={16} />,
-    href: "/",
+    href: '/',
   },
   {
-    title: "Tables",
+    title: 'Tables',
     icon: <IconTable width={16} height={16} />,
-    href: "/tables",
+    href: '/tables',
   },
   {
-    title: "Billings",
+    title: 'Billings',
     icon: <IconBilling width={16} height={16} />,
-    href: "/billings",
+    href: '/billings',
   },
   {
-    title: "Settings",
+    title: 'Settings',
     icon: <IconSettings width={16} height={16} />,
-    href: "/settings",
+    href: '/settings',
   },
   {
-    title: "Profile",
+    title: 'Profile',
     icon: <IconUser width={16} height={16} />,
-    href: "/profile",
+    href: '/profile',
   },
   {
-    title: "Sign In",
+    title: 'Sign In',
     icon: <IconSignIn width={16} height={16} />,
-    href: "/sign-in",
+    href: '/sign-in',
   },
   {
-    title: "Sign Up",
+    title: 'Sign Up',
     icon: <IconSiginUp width={16} height={16} />,
-    href: "/sigin-up",
+    href: '/sigin-up',
   },
 ];
 

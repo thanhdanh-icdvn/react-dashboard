@@ -1,7 +1,7 @@
-import MainDashboard from "./components/main-dashboard";
-import SideBar from "./components/side-bar";
+import MainDashboard from './components/main-dashboard';
+import SideBar from './components/side-bar';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   return (

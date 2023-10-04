@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import reportCardStyles from "./ReportCard.module.scss";
+import clsx from 'clsx';
+import reportCardStyles from './ReportCard.module.scss';
 
 export type ReportCardProps = {
   label: string;
@@ -16,11 +16,15 @@ export default function ReportCard({
   return (
     <div className={clsx(reportCardStyles.reportCard)}>
       <div className={clsx(reportCardStyles.content)}>
-        <div>{label}</div>
+        <div className={reportCardStyles.label}>{label}</div>
         <div className={reportCardStyles.amount}>
-          {amount}
+          {new Intl.NumberFormat('vi-VN').format(amount)}
           <span className={reportCardStyles.growthPercent}>
-            {growthPercent}%
+            {new Intl.NumberFormat('vi-VN', {
+              maximumFractionDigits: 2,
+              minimumFractionDigits: 0,
+            }).format(growthPercent)}
+            %
           </span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export default function IconBilling(props: SVGProps<SVGSVGElement>) {
   return (

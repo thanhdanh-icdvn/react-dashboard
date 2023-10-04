@@ -1,44 +1,23 @@
-import IconWallet from "../icons/IconWallet";
-import DashBoardWraper from "./DashBoardWraper";
-import ReportCard from "./card/ReportCard";
+import DashBoardWraper from './DashBoardWraper';
+import ReportCardList from './card/ReportCardList';
+import WelcomeCard from './card/WelcomeCard';
 
 export default function MainDashboard() {
   return (
     <DashBoardWraper>
-      <div>Pages/Dashboard</div>
+      <div>
+        <p>Pages/Dashboard</p>
+      </div>
+      <ReportCardList />
       <div
         style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          columnGap: "24px",
-          rowGap: "16px",
+          display: 'flex',
+          flexDirection: 'row',
+          marginTop: '24px',
+          columnGap: '24px',
         }}
       >
-        <ReportCard
-          amount={53000}
-          growthPercent={55}
-          label="Today's Money"
-          icon={<IconWallet />}
-        />
-        <ReportCard
-          amount={53000}
-          growthPercent={55}
-          label="Today's Money"
-          icon={<IconWallet />}
-        />
-        <ReportCard
-          amount={53000}
-          growthPercent={55}
-          label="Today's Money"
-          icon={<IconWallet />}
-        />
-        <ReportCard
-          amount={53000}
-          growthPercent={55}
-          label="Today's Money"
-          icon={<IconWallet />}
-        />
+        <WelcomeCard />
       </div>
     </DashBoardWraper>
   );

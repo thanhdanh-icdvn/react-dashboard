@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 export default function IconUser(props: SVGProps<SVGSVGElement>) {
   return (

@@ -2,22 +2,35 @@
     padding: 18px;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0 20px;
     align-items: center;
     justify-content: space-between;
     -webkit-backdrop-filter: blur(120px) brightness(100%);
     backdrop-filter: blur(120px) brightness(100%);
     background: linear-gradient(180deg, rgba(6, 11, 38, 0.74) 0%, rgba(26, 31, 55, 0.5) 100%);
-    border-radius: 20px;
+    border-radius: 16px;
     height: 80px;
-    width: 25%;
-    min-width: 335px;
+    width: calc(25% - 60px);
 
     .content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        .label {
+            color: var(--gray-gray-400, #A0AEC0);
+            width: max-content;
+        }
+
         .amount {
             font-size: 18px;
             line-height: 140%;
+            font-weight: 500;
 
             .growthPercent {
+                font-weight: 400;
                 font-size: 14px;
                 padding-left: 4px;
                 color: var(--primary-green-500-success-color, #01B574);
@@ -38,5 +51,17 @@
         background: #0075FF;
         box-shadow: 0px 3.5px 5.5px 0px rgba(0, 0, 0, 0.02);
         transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width:1024px) {
+        width: calc(100%/2 - 48px);
+    }
+
+    @media screen and (max-width:768px) {
+        width: calc(100%/2 - 48px);
+    }
+
+    @media screen and (max-width:425px) {
+        width: calc(100% - 24px);
     }
 }

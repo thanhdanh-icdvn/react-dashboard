@@ -1,4 +1,4 @@
-import BreadCrumbItem, { BreadCrumbItemProps } from "./BreadCrumbItem";
+import BreadCrumbItem, { BreadCrumbItemProps } from './BreadCrumbItem';
 
 export type BreadCrumbsProps = {
   breadcrumbsData: BreadCrumbItemProps[];
@@ -11,7 +11,7 @@ export default function BreadCrumbs({ breadcrumbsData }: BreadCrumbsProps) {
           {idx === breadcrumbsData.length - 1 ? (
             <span>{breadcrumb.label}</span>
           ) : (
-            <BreadCrumbItem {...breadcrumb} />
+            <BreadCrumbItem label={breadcrumb.label} href={breadcrumb.href} />
           )}
         </li>
       ))}

@@ -1,0 +1,48 @@
+.welcomeCard {
+    background: url(../../../assets/bg_welcome.png) lightgray 50% / cover no-repeat;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 15px;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .contentTop {
+        .textLight {
+            color: var(--gray-gray-400, #A0AEC0);
+        }
+    }
+
+    .contentBottom {
+        .recordLink {
+            color: #fff;
+            padding: 0.625rem 1.25rem;
+            border-radius: 6px;
+            border: 1px solid #fff;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center right;
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            background: linear-gradient(to right, #fff 50%, transparent 50%);
+            /* Left to right gradient background */
+            background-size: 200% 100%;
+            /* Double the background size */
+            background-position: right bottom;
+            /* Start gradient from the right */
+            transition: background-position 0.3s, color 0.3s;
+
+            &:hover {
+                background-position: left bottom;
+                /* Move the gradient to the left on hover */
+                color: #0075FF;
+            }
+        }
+    }
+}

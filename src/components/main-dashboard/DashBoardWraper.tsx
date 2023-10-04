@@ -1,5 +1,6 @@
-import clsx from "clsx";
-import dashboardWrapperStyles from "./DashBoardWraper.module.scss";
+import clsx from 'clsx';
+import dashboardWrapperStyles from './DashBoardWraper.module.scss';
+
 export type DashboardWrapperProps = {
   children?: React.ReactNode;
 };
