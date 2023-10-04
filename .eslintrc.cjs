@@ -1,35 +1,42 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:storybook/recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:storybook/recommended',
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
-  },
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@typescript-eslint'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 15,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react-refresh',
+    '@typescript-eslint',
+    'react-hooks',
+    'jsx-a11y',
+    'storybook',
+    'prettier',
+  ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    'react/react-in-jsx-scope': 0,
-    'react/jsx-props-no-spreading': 'off',
-    'react/prop-types': 'off',
-    'react/require-default-props': 'off',
-    'import/prefer-default-export': 'off',
-    'react/jsx-one-expression-per-line': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-refresh/only-export-components': 'warn',
   },
 };

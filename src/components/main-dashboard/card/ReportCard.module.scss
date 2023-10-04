@@ -12,6 +12,7 @@
     border-radius: 16px;
     height: 80px;
     width: calc(25% - 60px);
+    min-width: min-content;
 
     .content {
         display: flex;
