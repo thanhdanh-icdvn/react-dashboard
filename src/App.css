@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   background-blend-mode: color;
-  background-image: url("./assets/bg.jpg");
+  background-image: url('./assets/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

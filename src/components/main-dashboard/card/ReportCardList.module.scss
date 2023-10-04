@@ -1,10 +1,10 @@
 .reportCardList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px 24px;
 
-    @media screen and (max-width:425px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+  }
 }

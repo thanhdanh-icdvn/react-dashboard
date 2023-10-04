@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -12,6 +13,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -38,5 +40,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-refresh/only-export-components': 'warn',
+    'prettier/prettier': ['error'],
   },
 };

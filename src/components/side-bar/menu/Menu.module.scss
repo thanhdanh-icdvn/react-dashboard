@@ -1,29 +1,33 @@
 .sideBar {
-    -webkit-backdrop-filter: blur(120px) brightness(100%);
-    backdrop-filter: blur(120px) brightness(100%);
-    background: linear-gradient(180deg, rgba(4, 7, 24, 0.94) 0%, rgba(26, 31, 55, 0) 50%);
-    border-radius: 20px;
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 264px;
-    transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(120px) brightness(100%);
+  backdrop-filter: blur(120px) brightness(100%);
+  background: linear-gradient(
+    180deg,
+    rgba(4, 7, 24, 0.94) 0%,
+    rgba(26, 31, 55, 0) 50%
+  );
+  border-radius: 20px;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 264px;
+  transition: all 0.3s ease-in-out;
 
-    .menuList {
-        list-style-type: none;
-        margin-top: 160px;
-        padding: 22px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 12px;
-    }
+  .menuList {
+    list-style-type: none;
+    margin-top: 80px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+  }
 
-    @media screen and (max-width:768px) {
-        width: auto;
-    }
+  @media screen and (max-width: 768px) {
+    width: auto;
+  }
 
-    @media screen and (max-width:425px) {
-        width: 0;
-    }
+  @media screen and (max-width: 425px) {
+    width: 0;
+  }
 }
