@@ -45,6 +45,7 @@ const data = {
       },
       borderColor: 'transparent', // Transparent border color
       borderWidth: 1,
+      borderRadius: 10,
     },
   ],
 };

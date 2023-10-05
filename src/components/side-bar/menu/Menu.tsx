@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import IconBilling from '../../icons/IconBilling';
 import IconHome from '../../icons/IconHome';
 import IconSettings from '../../icons/IconSettings';
-import IconSiginUp from '../../icons/IconSiginUp';
+import IconSiginUp from '../../icons/IconSignUp';
 import IconSignIn from '../../icons/IconSignIn';
 import IconTable from '../../icons/IconTable';
 import IconUser from '../../icons/IconUser';
