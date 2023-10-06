@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import ReportCard from './ReportCard';
-import IconWallet from '../../icons/IconWallet';
 
 import reportCardListStyles from './ReportCardList.module.scss';
+import { IconCart, IconDocument, IconEarth, IconWallet } from '../../icons';
 
 export default function ReportCardList() {
   return (
@@ -16,20 +16,20 @@ export default function ReportCardList() {
       <ReportCard
         amount={53000}
         growthPercent={55}
-        label="Today's Money"
-        icon={<IconWallet />}
+        label="Today's Users"
+        icon={<IconEarth />}
       />
       <ReportCard
         amount={53000}
         growthPercent={55}
         label="Today's Money"
-        icon={<IconWallet />}
+        icon={<IconDocument />}
       />
       <ReportCard
         amount={53000}
         growthPercent={55}
         label="Today's Money"
-        icon={<IconWallet />}
+        icon={<IconCart />}
       />
     </div>
   );

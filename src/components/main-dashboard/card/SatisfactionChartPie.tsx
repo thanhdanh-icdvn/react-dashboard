@@ -1,55 +1,15 @@
 import {
   Chart as ChartJS,
   ArcElement,
-  Tooltip,
   ScriptableContext,
+  ChartOptions,
+  Plugin,
+  ChartData,
+  Tooltip,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-
+import { calculatePercentagesByIndex } from '../../../utils/number';
 ChartJS.register(ArcElement, Tooltip);
-const data = {
-  labels: ['Current', 'Remaining'],
-  datasets: [
-    {
-      label: 'Satisfaction Rate',
-      data: [95, 5],
-      backgroundColor: (context: ScriptableContext<'doughnut'>) => {
-        const { chart } = context;
-        const { chartArea } = chart;
-        if (!chartArea) {
-          return undefined;
-        }
-        if (context.dataIndex === 0) {
-          return getGradient(chart, [
-            {
-              offset: 0,
-              color: '#071434',
-            },
-            {
-              offset: 1,
-              color: '#0075FF',
-            },
-          ]);
-        } else {
-          return getGradient(chart, [
-            {
-              offset: 0,
-              color: '#fff',
-            },
-            {
-              offset: 1,
-              color: '#22234B',
-            },
-          ]);
-        }
-      },
-      borderColor: 'transparent', // Transparent border color
-      borderWidth: 1,
-      borderRadius: 10,
-    },
-  ],
-};
-
 type GradientValue = {
   offset: number;
   color: string;
@@ -69,26 +29,86 @@ function getGradient(
   return gradientSegment;
 }
 
-export default function SatisfactionChartPie() {
+export type AnyObject = Record<string, unknown>;
+
+type SatisfactionChartPieProps = {
+  chartData: number[];
+};
+export default function SatisfactionChartPie({
+  chartData,
+}: SatisfactionChartPieProps) {
+  const percent = calculatePercentagesByIndex(chartData, 0);
+  function handleDrawLabel(chart: ChartJS) {
+    // Your custom drawing logic here
+    const ctx = chart.ctx as CanvasRenderingContext2D;
+    const width = chart.width;
+    const height = chart.height;
+
+    // Calculate the position for your label
+    const x = width / 2;
+    const y = height / 2;
+
+    // Customize label properties
+    ctx.fillStyle = 'white';
+    ctx.font = '50px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    // Draw your custom label
+    ctx.fillText(`${String(percent)}%`, x, y);
+    ctx.save();
+  }
+  const data: ChartData<'doughnut', number[], string> = {
+    labels: ['Current', 'Remaining'],
+    datasets: [
+      {
+        label: 'Satisfaction value',
+        data: chartData,
+        backgroundColor: (context: ScriptableContext<'doughnut'>) => {
+          const { chart } = context;
+          const { chartArea } = chart;
+          if (!chartArea) {
+            return undefined;
+          }
+          if (context.dataIndex === 0) {
+            return getGradient(chart, [
+              {
+                offset: 0,
+                color: '#fffbfb',
+              },
+              {
+                offset: 1,
+                color: '#0075ff',
+              },
+            ]);
+          } else {
+            return getGradient(chart, [
+              {
+                offset: 0,
+                color: 'transparent',
+              },
+            ]);
+          }
+        },
+        borderColor: 'transparent', // Transparent border color
+        borderWidth: 1,
+        borderRadius: 20,
+      },
+    ],
+  };
+  const customPlugin: Plugin<'doughnut', AnyObject> = {
+    id: 'doughnutLabel',
+    beforeDatasetDraw: (chart) => handleDrawLabel(chart),
+    beforeUpdate: (chart) => handleDrawLabel(chart),
+  };
+  const chartOptions: ChartOptions<'doughnut'> = {
+    rotation: -135,
+    circumference: 270,
+    cutout: '90%',
+    responsive: true,
+    animation: false,
+    aspectRatio: 1,
+  };
   return (
-    <Doughnut
-      data={data}
-      style={{
-        marginBottom: '10px',
-        maxHeight: '250px',
-        aspectRatio: '1 / 1',
-        width: '100%',
-        textAlign: 'center',
-        display: 'flex',
-      }}
-      options={{
-        rotation: -135,
-        circumference: 270,
-        cutout: '90%',
-        maintainAspectRatio: true,
-        responsive: true,
-        animation: false,
-      }}
-    />
+    <Doughnut data={data} options={chartOptions} plugins={[customPlugin]} />
   );
 }

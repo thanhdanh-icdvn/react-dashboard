@@ -1,0 +1,89 @@
+.referalTracking {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: linear-gradient(127deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(14, 21, 58, 0.71) 91.2%);
+    backdrop-filter: blur(60px);
+    width: auto;
+    padding: 30px;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
+
+        /* 25.2px */
+        .moreButton {
+            padding: 10px;
+            background: #1a1f37;
+            box-shadow: 0px 3.5px 5.5px 0px rgba(0, 0, 0, 0.02);
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        align-items: center;
+        justify-content: center;
+
+        .infor {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            flex: 1;
+            min-width: max-content;
+
+            .childCard {
+                border-radius: 20px;
+                background: linear-gradient(127deg, #060C29 28.26%, rgba(4, 12, 48, 0.50) 91.2%);
+                backdrop-filter: blur(60px);
+                padding: 30px;
+
+                .childCardTitle {
+                    color: var(--gray-gray-400, #A0AEC0);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 100%;
+                }
+
+                .childCardDetail {
+                    color: var(--secondary-primary-white, #FFF);
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 140%;
+                    /* 25.2px */
+                }
+            }
+        }
+
+        .graph {
+            flex: 1;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+        width: calc(100% - 60px);
+    }
+
+    @media screen and (max-width:768px) {
+        width: calc(100% - 60px);
+    }
+}

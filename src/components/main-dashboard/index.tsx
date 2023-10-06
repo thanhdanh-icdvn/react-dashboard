@@ -1,7 +1,7 @@
 import DashBoardWraper from './DashBoardWraper';
+import GridSecond from './card/GridSecond';
 import ReportCardList from './card/ReportCardList';
-import SatisfactionRateCard from './card/SatisfactionRateCard';
-import WelcomeCard from './card/WelcomeCard';
+import SaleCard from './card/SaleCard';
 
 export default function MainDashboard() {
   return (
@@ -10,18 +10,8 @@ export default function MainDashboard() {
         <p>Pages/Dashboard</p>
       </div>
       <ReportCardList />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          marginTop: '24px',
-          columnGap: '24px',
-        }}
-      >
-        <WelcomeCard />
-        <SatisfactionRateCard />
-      </div>
+      <GridSecond />
+      <SaleCard />
     </DashBoardWraper>
   );
 }

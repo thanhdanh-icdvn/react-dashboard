@@ -1,8 +1,16 @@
 import clsx from 'clsx';
 import satisfactionRateCardStyles from './SatisfactionRateCard.module.scss';
 import SatisfactionChartPie from './SatisfactionChartPie';
+import { calculatePercentagesByIndex } from '../../../utils/number';
 
-export default function SatisfactionRateCard() {
+type SatisfactionRateCardProps = {
+  dataValue?: number[];
+};
+
+export default function SatisfactionRateCard({
+  dataValue = [800, 50],
+}: SatisfactionRateCardProps) {
+  const percent = calculatePercentagesByIndex(dataValue, 0);
   return (
     <div className={clsx(satisfactionRateCardStyles.satisfactionRate)}>
       <div className={clsx(satisfactionRateCardStyles.summary)}>
@@ -13,12 +21,14 @@ export default function SatisfactionRateCard() {
           From all projects
         </p>
       </div>
-      <SatisfactionChartPie />
+      <div className={clsx(satisfactionRateCardStyles.chart)}>
+        <SatisfactionChartPie chartData={dataValue} />
+      </div>
       <div className={clsx(satisfactionRateCardStyles.processInfo)}>
         <span className={clsx(satisfactionRateCardStyles.min)}>0%</span>
         <figure className={clsx(satisfactionRateCardStyles.current)}>
           <span className={clsx(satisfactionRateCardStyles.currentValue)}>
-            95%
+            {percent}%
           </span>
           <figcaption
             className={clsx(satisfactionRateCardStyles.currentCaption)}

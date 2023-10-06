@@ -7,6 +7,9 @@ import IconSignUp from './IconSignUp';
 import IconTable from './IconTable';
 import IconWallet from './IconWallet';
 import IconUser from './IconUser';
+import IconEarth from './IconEarth';
+import IconDocument from './IconDocument';
+import IconCart from './IconCart';
 
 export {
   IconHome,
@@ -18,4 +21,7 @@ export {
   IconTable,
   IconWallet,
   IconUser,
+  IconEarth,
+  IconDocument,
+  IconCart,
 };
