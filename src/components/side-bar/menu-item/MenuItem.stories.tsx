@@ -26,7 +26,7 @@ const icons = {
   IconWallet,
 };
 const meta = {
-  title: 'Components/MenuItem/',
+  title: 'Components/MenuItem',
   component: MenuItem,
   decorators: [
     (Story) => (
@@ -46,7 +46,7 @@ const meta = {
     },
     icon: {
       options: Object.keys(icons),
-      mapping: Object.entries(icons),
+      mapping: icons,
       control: {
         type: 'select',
         options: Object.keys(icons),
