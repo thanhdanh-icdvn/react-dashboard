@@ -1,3 +1,5 @@
+import { createGradient } from '@/utils/chartGradient';
+import { calculatePercentagesByIndex } from '@/utils/number';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -5,29 +7,8 @@ import {
   ChartOptions,
   Plugin,
   ChartData,
-  Tooltip,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { calculatePercentagesByIndex } from '../../../utils/number';
-ChartJS.register(ArcElement, Tooltip);
-type GradientValue = {
-  offset: number;
-  color: string;
-};
-function getGradient(
-  chart: ChartJS,
-  gradients: GradientValue[],
-): CanvasGradient {
-  const {
-    ctx,
-    chartArea: { left, right },
-  } = chart;
-  const gradientSegment = ctx.createLinearGradient(left, 0, right, 0);
-  gradients.map((clr) => {
-    gradientSegment.addColorStop(clr.offset, clr.color);
-  });
-  return gradientSegment;
-}
 
 export type AnyObject = Record<string, unknown>;
 
@@ -37,6 +18,7 @@ type SatisfactionChartPieProps = {
 export default function SatisfactionChartPie({
   chartData,
 }: SatisfactionChartPieProps) {
+  ChartJS.register(ArcElement);
   const percent = calculatePercentagesByIndex(chartData, 0);
   function handleDrawLabel(chart: ChartJS) {
     // Your custom drawing logic here
@@ -70,7 +52,7 @@ export default function SatisfactionChartPie({
             return undefined;
           }
           if (context.dataIndex === 0) {
-            return getGradient(chart, [
+            return createGradient(chart, [
               {
                 offset: 0,
                 color: '#fffbfb',
@@ -81,7 +63,7 @@ export default function SatisfactionChartPie({
               },
             ]);
           } else {
-            return getGradient(chart, [
+            return createGradient(chart, [
               {
                 offset: 0,
                 color: 'transparent',

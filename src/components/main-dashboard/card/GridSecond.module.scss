@@ -6,6 +6,11 @@
     column-gap: 24px;
     row-gap: 16px;
 
+    @media screen and (max-width:1024px) {
+        flex-direction: column;
+        width: 100%;
+    }
+
     @media screen and (max-width:768px) {
         flex-direction: column;
     }

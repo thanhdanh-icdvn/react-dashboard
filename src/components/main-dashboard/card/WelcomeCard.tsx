@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import welcomCardStyles from './WelcomeCard.module.scss';
-import IconArrowRight from '../../icons/IconArrowRight';
+import { IconArrowRight } from '@/components/icons';
 
 export default function WelcomeCard() {
   return (

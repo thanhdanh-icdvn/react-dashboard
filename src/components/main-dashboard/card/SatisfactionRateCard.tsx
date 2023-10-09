@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import satisfactionRateCardStyles from './SatisfactionRateCard.module.scss';
 import SatisfactionChartPie from './SatisfactionChartPie';
-import { calculatePercentagesByIndex } from '../../../utils/number';
+import { calculatePercentagesByIndex } from '@/utils/number';
 
 type SatisfactionRateCardProps = {
   dataValue?: number[];

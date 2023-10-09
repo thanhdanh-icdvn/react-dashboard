@@ -6,62 +6,99 @@ import {
   PointElement,
   LineElement,
   Title,
-  Tooltip,
-  Legend,
+  ChartOptions,
+  ChartData,
 } from 'chart.js';
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-);
 function randomNumber(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 export default function SaleLineChart() {
-  const options = {
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+  );
+  const options: ChartOptions<'line'> = {
     responsive: true,
+    maintainAspectRatio: true,
+    layout: {
+      autoPadding: true,
+    },
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          color: 'white',
+          font: {
+            size: 16,
+          },
+        },
       },
-      title: {
-        display: true,
-        text: 'Chart.js Line Chart',
+    },
+    elements: {
+      line: {
+        tension: 0.5,
+      },
+      point: {
+        pointStyle: 'circle',
+        radius: 0,
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#CBD5E0',
+        },
+        grid: {
+          color: 'transparent',
+        },
+        border: {
+          dash: [4, 4],
+        },
+      },
+      y: {
+        ticks: {
+          color: '#CBD5E0',
+        },
+        grid: {
+          color: '#56577A',
+        },
+        border: {
+          dash: [4, 4],
+        },
       },
     },
   };
   const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
     'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
-  const data = {
+  const data: ChartData<'line'> = {
     labels,
     datasets: [
       {
         label: 'Dataset 1',
-        data: labels.map(() => randomNumber(-1000, 1000)),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        data: labels.map(() => randomNumber(0, 500)),
+        borderColor: 'rgb(44, 217, 255)',
+        backgroundColor: 'transparent',
       },
       {
         label: 'Dataset 2',
-        data: labels.map(() => randomNumber(-1000, 1000)),
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        data: labels.map(() => randomNumber(0, 500)),
+        borderColor: 'rgb(0, 117, 255)',
+        backgroundColor: 'transparent',
       },
     ],
   };

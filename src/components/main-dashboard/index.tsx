@@ -1,7 +1,7 @@
 import DashBoardWraper from './DashBoardWraper';
 import GridSecond from './card/GridSecond';
+import GridThird from './card/GridThird';
 import ReportCardList from './card/ReportCardList';
-import SaleCard from './card/SaleCard';
 
 export default function MainDashboard() {
   return (
@@ -11,7 +11,7 @@ export default function MainDashboard() {
       </div>
       <ReportCardList />
       <GridSecond />
-      <SaleCard />
+      <GridThird />
     </DashBoardWraper>
   );
 }

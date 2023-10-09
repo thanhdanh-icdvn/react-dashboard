@@ -35,13 +35,11 @@
         flex-wrap: wrap;
         column-gap: 30px;
         align-items: center;
-        justify-content: center;
 
         .infor {
             display: flex;
             flex-direction: column;
             row-gap: 20px;
-            flex: 1;
             min-width: max-content;
 
             .childCard {
@@ -49,6 +47,7 @@
                 background: linear-gradient(127deg, #060C29 28.26%, rgba(4, 12, 48, 0.50) 91.2%);
                 backdrop-filter: blur(60px);
                 padding: 30px;
+                flex: 1;
 
                 .childCardTitle {
                     color: var(--gray-gray-400, #A0AEC0);
@@ -70,7 +69,6 @@
         }
 
         .graph {
-            flex: 1;
             display: flex;
             align-self: center;
             justify-content: center;

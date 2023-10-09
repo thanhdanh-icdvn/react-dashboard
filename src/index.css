@@ -102,7 +102,8 @@ section {
 }
 body {
   line-height: 1.43;
-  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana,
+    sans-serif;
 }
 ol,
 ul {

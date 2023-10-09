@@ -10,6 +10,9 @@
   flex-direction: column;
 
   .contentTop {
+    flex-shrink: 0;
+    min-width: max-content;
+
     .textLight {
       color: var(--gray-gray-400, #a0aec0);
       font-size: 14px;
@@ -21,6 +24,7 @@
     margin-top: auto;
 
     .recordLink {
+      text-decoration: none;
       color: #fff;
       padding: 0.625rem 1.25rem;
       border-radius: 6px;
@@ -51,7 +55,7 @@
   }
 
   @media screen and (max-width:1024px) {
-    width: calc(50% - 60px);
+    width: calc(100% - 60px);
   }
 
   @media screen and (max-width:768px) {
