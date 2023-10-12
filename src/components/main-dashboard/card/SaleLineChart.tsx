@@ -8,6 +8,7 @@ import {
   Title,
   ChartOptions,
   ChartData,
+  Filler,
 } from 'chart.js';
 function randomNumber(min: number, max: number) {
   return Math.random() * (max - min) + min;
@@ -19,13 +20,11 @@ export default function SaleLineChart() {
     PointElement,
     LineElement,
     Title,
+    Filler,
   );
   const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: true,
-    layout: {
-      autoPadding: true,
-    },
     plugins: {
       legend: {
         position: 'top' as const,
@@ -91,14 +90,18 @@ export default function SaleLineChart() {
       {
         label: 'Dataset 1',
         data: labels.map(() => randomNumber(0, 500)),
-        borderColor: 'rgb(44, 217, 255)',
-        backgroundColor: 'transparent',
+        borderColor: 'rgba(44, 217, 255,1)',
+        backgroundColor: 'rgba(44, 217, 255,0.2)',
+        fill: true,
+        borderWidth: 3,
       },
       {
         label: 'Dataset 2',
         data: labels.map(() => randomNumber(0, 500)),
-        borderColor: 'rgb(0, 117, 255)',
-        backgroundColor: 'transparent',
+        borderColor: 'rgba(0, 117, 255,1)',
+        backgroundColor: 'rgba(0, 117, 255,0.2)',
+        fill: true,
+        borderWidth: 3,
       },
     ],
   };
