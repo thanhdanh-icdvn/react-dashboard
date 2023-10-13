@@ -44,7 +44,7 @@ const menus: MenuItemProps[] = [
   {
     title: 'Sign Up',
     icon: <IconSiginUp width={16} height={16} />,
-    href: '/sigin-up',
+    href: '/sign-up',
   },
 ];
 

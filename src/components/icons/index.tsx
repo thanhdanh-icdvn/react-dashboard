@@ -10,6 +10,8 @@ import IconUser from './IconUser';
 import IconEarth from './IconEarth';
 import IconDocument from './IconDocument';
 import IconCart from './IconCart';
+import IconLogoApple from './IconLogoApple';
+import IconLogoFacebook from './IconLogoFacebook';
 
 export {
   IconHome,
@@ -24,4 +26,6 @@ export {
   IconEarth,
   IconDocument,
   IconCart,
+  IconLogoFacebook,
+  IconLogoApple,
 };
