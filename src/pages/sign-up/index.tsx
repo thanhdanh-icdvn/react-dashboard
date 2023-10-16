@@ -3,6 +3,8 @@ import signUpStyles from './SignUp.module.scss';
 import { useState } from 'react';
 import Button from '@/components/buttons';
 import { Link, NavLink } from 'react-router-dom';
+import { IconLogoApple, IconLogoFacebook } from '@/components/icons';
+import IconLogoGoogle from '@/components/icons/IconLogoGoogle';
 
 export default function SignUp() {
   const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -23,10 +25,10 @@ export default function SignUp() {
             <NavLink to={'/profile'}>Profile</NavLink>
           </li>
           <li className={clsx(signUpStyles.menuItem)}>
-            <NavLink to={'/sign-up'}>SignUp</NavLink>
+            <NavLink to={'/sign-up'}>Sign up</NavLink>
           </li>
           <li className={clsx(signUpStyles.menuItem)}>
-            <NavLink to={'/sign-in'}>Sign In</NavLink>
+            <NavLink to={'/sign-in'}>Sign in</NavLink>
           </li>
         </ul>
         <Button size="sm">Free Download</Button>
@@ -37,12 +39,41 @@ export default function SignUp() {
           <h3>THE VISION UI DASHBOARD</h3>
         </div>
         <div className={clsx(signUpStyles.formWrap)}>
-          <h3 className={clsx(signUpStyles.welcomeText)}>Nice to see you!</h3>
-          <p className={clsx(signUpStyles.welcomeTextCaption)}>
-            Enter your email and password to sign in
-          </p>
+          <div className={clsx(signUpStyles.welcomeBlock)}>
+            <h3 className={clsx(signUpStyles.welcomeText)}>Welcome!</h3>
+            <p
+              className={clsx(
+                signUpStyles.welcomeTextCaption,
+                signUpStyles.textCenter,
+              )}
+            >
+              Use these awesome forms to login or create new account in your
+              project for free.
+            </p>
+          </div>
 
           <form className={clsx(signUpStyles.form)}>
+            <h4>Register with</h4>
+            <ul className={clsx(signUpStyles.socialList)}>
+              <li>
+                <Link to={'/'}>
+                  <IconLogoFacebook color="#fff" width={32} height={32} />
+                </Link>
+              </li>
+              <li>
+                <Link to={'/'}>
+                  <IconLogoApple color="#fff" width={32} height={32} />
+                </Link>
+              </li>
+              <li>
+                <Link to={'/'}>
+                  <IconLogoGoogle color="#fff" width={32} height={32} />
+                </Link>
+              </li>
+            </ul>
+
+            <p>or</p>
+
             <div className={clsx(signUpStyles.formInput)}>
               <label htmlFor="email">Email</label>
               <input
@@ -61,24 +92,27 @@ export default function SignUp() {
                 placeholder="Your email address"
               />
             </div>
-            <label className={clsx(signUpStyles.switch)}>
-              <input
-                type="checkbox"
-                onChange={handleToggleSwitch}
-                className={clsx({
-                  checked: isChecked,
-                })}
-                checked={isChecked}
-              />
-              <span
-                className={clsx(signUpStyles.slider, signUpStyles.rounded)}
-              />
-            </label>
+            <div className={clsx(signUpStyles.label)}>
+              <label className={clsx(signUpStyles.switch)}>
+                <input
+                  type="checkbox"
+                  onChange={handleToggleSwitch}
+                  className={clsx({
+                    checked: isChecked,
+                  })}
+                  checked={isChecked}
+                />
+                <span
+                  className={clsx(signUpStyles.slider, signUpStyles.rounded)}
+                />
+              </label>
+              Remember
+            </div>
             <Button full>SIGN IN</Button>
-            <p className={clsx(signUpStyles.link)}>
-              Don&apos;t have an account?{' '}
-              <Link to={'/sign-up'} className={clsx(signUpStyles.linkToSignUp)}>
-                Sign up
+            <p className={clsx(signUpStyles.linkBlock)}>
+              Already have an account?{' '}
+              <Link to={'/sign-in'} className={clsx(signUpStyles.link)}>
+                Sign in
               </Link>
             </p>
           </form>

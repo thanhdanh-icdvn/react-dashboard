@@ -74,6 +74,7 @@
         display: flex;
         flex-direction: row;
         width: 100%;
+        min-height: 600px;
 
         .bg {
             background-repeat: no-repeat;
@@ -106,21 +107,32 @@
             color: #fff;
             padding: 0 40px;
 
-            .welcomeText {
-                color: #FFF;
-                font-size: 30px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 130%;
+            .welcomeBlock {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 335px;
+
+                .welcomeText {
+                    color: #FFF;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 130%;
+                }
+
+                .welcomeTextCaption {
+                    color: var(--gray-gray-400, #A0AEC0);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 140%;
+                    /* 19.6px */
+                }
             }
 
-            .welcomeTextCaption {
-                color: var(--gray-gray-400, #A0AEC0);
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 140%;
-                /* 19.6px */
+            .textCenter {
+                text-align: center;
             }
 
             .form {
@@ -130,12 +142,29 @@
                 flex-direction: column;
 
                 width: 100%;
-                max-width: 350px;
+                max-width: 335px;
+                border-radius: 20px;
+                background: linear-gradient(124deg, rgba(255, 255, 255, 0.00) -22.71%, rgba(255, 255, 255, 0.04) 70.04%);
+                backdrop-filter: blur(21px);
+                padding: 20px;
+                border: 1px solid #fff;
+                text-align: center;
+
+                .socialList {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 10px;
+                }
 
                 .formInput {
                     display: flex;
                     flex-direction: column;
                     row-gap: 10px;
+                    justify-content: flex-start;
+                    width: 100%;
+                    text-align: left;
 
                     input {
                         padding: 15px 22px;
@@ -149,70 +178,79 @@
                     }
                 }
 
-                .switch {
-                    position: relative;
-                    display: inline-block;
-                    width: 36px;
-                    height: 18px;
+                .label {
+                    text-align: left;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    column-gap: 10px;
 
-                    input {
-                        opacity: 0;
-                        width: 0;
-                        height: 0;
+                    .switch {
+                        position: relative;
+                        display: inline-block;
+                        width: 36px;
+                        height: 18px;
 
-                        &:checked {
-                            +.slider {
-                                background-color: #2196F3;
+                        input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+
+                            &:checked {
+                                +.slider {
+                                    background-color: #2196F3;
+
+                                    &::before {
+                                        transform: translateX(18px);
+                                    }
+                                }
+                            }
+
+                            &:focus+.slider {
+                                box-shadow: 0 0 1px #2196F3;
+                            }
+                        }
+
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #0075FF;
+                            -webkit-transition: .4s;
+                            transition: .4s;
+                            padding: 2px;
+
+                            &:before {
+                                position: absolute;
+                                content: "";
+                                left: 2px;
+                                height: 14px;
+                                width: 14px;
+                                top: 2px;
+                                background-color: white;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+
+                            &.rounded {
+                                border-radius: 34px;
 
                                 &::before {
-                                    transform: translateX(18px);
+                                    border-radius: 50%;
                                 }
                             }
                         }
 
-                        &:focus+.slider {
-                            box-shadow: 0 0 1px #2196F3;
-                        }
                     }
-
-                    .slider {
-                        position: absolute;
-                        cursor: pointer;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background-color: #0075FF;
-                        -webkit-transition: .4s;
-                        transition: .4s;
-                        padding: 2px;
-
-                        &:before {
-                            position: absolute;
-                            content: "";
-                            height: 14px;
-                            width: 14px;
-                            top: 2px;
-                            background-color: white;
-                            -webkit-transition: .4s;
-                            transition: .4s;
-                        }
-
-                        &.rounded {
-                            border-radius: 34px;
-
-                            &::before {
-                                border-radius: 50%;
-                            }
-                        }
-                    }
-
                 }
 
-                .link {
+                .linkBlock {
                     text-align: center;
 
-                    .linkToSignUp {
+                    .link {
                         color: #FFF;
                         font-size: 14px;
                         font-style: normal;
