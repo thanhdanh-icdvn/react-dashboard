@@ -3,10 +3,10 @@ import {
   IconHome,
   IconSettings,
   IconSignIn,
+  IconSignUp,
   IconTable,
   IconUser,
 } from '../icons';
-import IconSiginUp from '../icons/IconSignUp';
 import { MenuItemProps } from './menu-item/MenuItem';
 import Menu from './menu/Menu';
 
@@ -43,7 +43,7 @@ const menus: MenuItemProps[] = [
   },
   {
     title: 'Sign Up',
-    icon: <IconSiginUp width={16} height={16} />,
+    icon: <IconSignUp width={16} height={16} />,
     href: '/sign-up',
   },
 ];

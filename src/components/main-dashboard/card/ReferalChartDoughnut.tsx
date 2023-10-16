@@ -97,7 +97,7 @@ export default function ReferalChartDoughnut({
     cutout: '90%',
     maintainAspectRatio: true,
     responsive: true,
-    animation: false,
+    // animation: true,
   };
   return (
     <Doughnut data={data} options={chartOptions} plugins={[customPlugin]} />

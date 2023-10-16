@@ -35,7 +35,7 @@ export default function SignUp() {
       </nav>
       <div className={clsx(signUpStyles.content)}>
         <div className={clsx(signUpStyles.bg)}>
-          <p>INSPIRED BY THE FUTURE:</p>
+          <p>INSPIRED BY THE FUTURE</p>
           <h3>THE VISION UI DASHBOARD</h3>
         </div>
         <div className={clsx(signUpStyles.formWrap)}>
@@ -108,7 +108,15 @@ export default function SignUp() {
               </label>
               Remember
             </div>
-            <Button full>SIGN IN</Button>
+            <Button
+              full
+              onClick={(e) => {
+                e.preventDefault();
+                console.log('sign up');
+              }}
+            >
+              SIGN UP
+            </Button>
             <p className={clsx(signUpStyles.linkBlock)}>
               Already have an account?{' '}
               <Link to={'/sign-in'} className={clsx(signUpStyles.link)}>

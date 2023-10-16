@@ -87,7 +87,7 @@ export default function SatisfactionChartPie({
     circumference: 270,
     cutout: '90%',
     responsive: true,
-    animation: false,
+    // animation: true,
     aspectRatio: 1,
   };
   return (

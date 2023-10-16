@@ -1,3 +1,4 @@
+import TopBar from '../top-bar';
 import GridSecond from './card/GridSecond';
 import GridThird from './card/GridThird';
 import ReportCardList from './card/ReportCardList';
@@ -5,9 +6,7 @@ import ReportCardList from './card/ReportCardList';
 export default function MainDashboard() {
   return (
     <>
-      <div>
-        <p>Pages/Dashboard</p>
-      </div>
+      <TopBar />
       <ReportCardList />
       <GridSecond />
       <GridThird />

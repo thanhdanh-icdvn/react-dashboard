@@ -33,7 +33,7 @@ export default function SignIn() {
       </nav>
       <div className={clsx(signInStyles.content)}>
         <div className={clsx(signInStyles.bg)}>
-          <p>INSPIRED BY THE FUTURE:</p>
+          <p>INSPIRED BY THE FUTURE</p>
           <h3>THE VISION UI DASHBOARD</h3>
         </div>
         <div className={clsx(signInStyles.formWrap)}>
