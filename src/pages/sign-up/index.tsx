@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import signUpStyles from './SignUp.module.scss';
+import signUpStyles from '../sign-in/SignIn.module.scss';
 import { useState } from 'react';
 import Button from '@/components/buttons';
 import { Link, NavLink } from 'react-router-dom';
