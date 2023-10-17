@@ -25,10 +25,10 @@ export default function TopBar() {
           <IconUser />
           Sign In
         </Link>
-        <Link className={clsx(topBarStyles.link)} to="/">
+        <Link className={clsx(topBarStyles.link)} to="/settings">
           <IconGear />
         </Link>
-        <Link className={clsx(topBarStyles.link)} to="/">
+        <Link className={clsx(topBarStyles.link)} to="/notifications">
           <IconBell />
         </Link>
       </div>

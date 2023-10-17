@@ -3,7 +3,11 @@ import signUpStyles from '../sign-in/SignIn.module.scss';
 import { useState } from 'react';
 import Button from '@/components/buttons';
 import { Link, NavLink } from 'react-router-dom';
-import { IconLogoApple, IconLogoFacebook } from '@/components/icons';
+import {
+  IconLogoApple,
+  IconLogoFacebook,
+  IconLogoTwitter,
+} from '@/components/icons';
 import IconLogoGoogle from '@/components/icons/IconLogoGoogle';
 
 export default function SignUp() {
@@ -57,17 +61,22 @@ export default function SignUp() {
             <ul className={clsx(signUpStyles.socialList)}>
               <li>
                 <Link to={'/'}>
-                  <IconLogoFacebook color="#fff" width={32} height={32} />
+                  <IconLogoFacebook />
                 </Link>
               </li>
               <li>
                 <Link to={'/'}>
-                  <IconLogoApple color="#fff" width={32} height={32} />
+                  <IconLogoApple />
                 </Link>
               </li>
               <li>
                 <Link to={'/'}>
-                  <IconLogoGoogle color="#fff" width={32} height={32} />
+                  <IconLogoGoogle />
+                </Link>
+              </li>
+              <li>
+                <Link to={'/'}>
+                  <IconLogoTwitter />
                 </Link>
               </li>
             </ul>

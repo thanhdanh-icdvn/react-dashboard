@@ -13,6 +13,7 @@ import IconCart from './IconCart';
 import IconLogoApple from './IconLogoApple';
 import IconLogoFacebook from './IconLogoFacebook';
 import IconLogoGoogle from './IconLogoGoogle';
+import IconLogoTwitter from './IconLogoTwitter';
 import IconGear from './IconGear';
 import IconBell from './IconBell';
 import IconSearch from './IconSearch';
@@ -33,6 +34,7 @@ export {
   IconLogoFacebook,
   IconLogoApple,
   IconLogoGoogle,
+  IconLogoTwitter,
   IconGear,
   IconBell,
   IconSearch,

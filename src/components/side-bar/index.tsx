@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
   IconBilling,
   IconHome,
@@ -9,6 +10,9 @@ import {
 } from '../icons';
 import { MenuItemProps } from './menu-item/MenuItem';
 import Menu from './menu/Menu';
+
+import sideBarStyles from './sideBar.module.scss';
+import Button from '../buttons';
 
 const menus: MenuItemProps[] = [
   {
@@ -50,8 +54,11 @@ const menus: MenuItemProps[] = [
 
 export default function SideBar() {
   return (
-    <aside>
+    <aside className={clsx(sideBarStyles.sideBar)}>
       <Menu menuData={menus} />
+      <Button className={clsx(sideBarStyles.btnToggle)}>
+        <IconHome />
+      </Button>
     </aside>
   );
 }
