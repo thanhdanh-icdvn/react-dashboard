@@ -144,10 +144,16 @@
                     align-items: center;
 
                     svg {
-                        aspect-ratio: 1;
                         display: flex;
                         color: #fff;
                         font-size: 50px;
+                        object-fit: contain;
+                    }
+
+                    &:last-child {
+                        svg {
+                            font-size: 42px;
+                        }
                     }
                 }
             }
