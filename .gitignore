@@ -26,5 +26,3 @@ dist-ssr
 .eslintcache
 storybook-static
 # env
-.env
-.env.*.local
