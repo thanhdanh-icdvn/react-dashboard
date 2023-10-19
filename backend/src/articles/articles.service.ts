@@ -16,7 +16,7 @@ export class ArticlesService {
   }
 
   findOne(id: number) {
-    return this.prisma.article.findMany({
+    return this.prisma.article.findUnique({
       where: { published: true, id },
       include: { author: true },
     });
