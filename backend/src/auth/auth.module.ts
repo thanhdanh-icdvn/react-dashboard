@@ -6,8 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { UsersModule } from 'src/users/users.module';
 import { JwtStrategy } from './jwt.strategy';
-
-export const JWT_SECRET = process.env.JWT_SECRET!;
+import { JWT_SECRET } from 'src/constants';
 
 @Module({
   controllers: [AuthController],
