@@ -5,6 +5,13 @@
     gap: 16px 30px;
     flex-wrap: wrap;
     align-items: center;
+    z-index: 10;
+    position: fixed;
+    left: 264px;
+    right: 0;
+    top: 0;
+    padding: 16px 40px;
+    backdrop-filter: blur(20px);
 
     .breadcrumbs {
         display: flex;
@@ -69,5 +76,13 @@
             align-items: center;
             text-decoration: none;
         }
+    }
+
+    @media screen and (max-width:768px) {
+        left: 80px;
+    }
+
+    @media screen and (max-width:425px) {
+        left: 0;
     }
 }

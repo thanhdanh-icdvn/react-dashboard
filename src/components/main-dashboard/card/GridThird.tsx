@@ -5,7 +5,6 @@ export default function GridThird() {
   return (
     <div className={clsx(gridThirdStyles.gridThird)}>
       <SaleCard />
-      <SaleCard />
     </div>
   );
 }

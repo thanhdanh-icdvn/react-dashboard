@@ -3,6 +3,8 @@
   padding: 40px 24px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 0;
 
   @media screen and (max-width: 768px) {
     width: calc(100% - 80px - 48px);
