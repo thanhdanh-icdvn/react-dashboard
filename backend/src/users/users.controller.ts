@@ -20,6 +20,7 @@ import {
 } from '@nestjs/swagger';
 import { UserEntity } from './entities/user.entity';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { exclude } from 'src/utils';
 
 @Controller('users')
 @ApiTags('users')
@@ -38,7 +39,7 @@ export class UsersController {
   @ApiOkResponse({ type: UserEntity, isArray: true })
   async findAll() {
     const users = await this.usersService.findAll();
-    return users.map((user) => new UserEntity(user));
+    return users.map((user) => new UserEntity(exclude(user, ['password'])));
   }
 
   @Get(':id')
@@ -46,7 +47,8 @@ export class UsersController {
   @ApiBearerAuth()
   @ApiOkResponse({ type: UserEntity })
   async findOne(@Param('id', ParseIntPipe) id: number) {
-    return new UserEntity(await this.usersService.findOne(id));
+    const user = await this.usersService.findOne(id);
+    return new UserEntity(exclude(user, ['password']));
   }
 
   @Patch(':id')

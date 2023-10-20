@@ -55,8 +55,12 @@ export class AuthService {
     // create user in db
     // ...
     // send confirmation mail
-    await this.mailService.sendUserConfirmation(createUserDto, token);
-    return this.prisma.user.create({
+    const sendEmail = await this.mailService.sendUserConfirmation(
+      createUserDto,
+      token,
+    );
+    console.log(sendEmail);
+    return await this.prisma.user.create({
       data: createUserDto,
     });
   }
