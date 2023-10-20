@@ -6,13 +6,18 @@ import {
 import { PrismaService } from 'src/prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import { AuthEntity } from './entities/auth.entity';
-import { compare } from 'bcrypt';
+import { compare, hash } from 'bcrypt';
+import { UserEntity } from 'src/users/entities/user.entity';
+import { CreateUserDto } from 'src/users/dto/create-user.dto';
+import { ROUNDS_OF_HASHING } from '../../src/constants';
+import { MailService } from 'src/mail/mail.service';
 
 @Injectable()
 export class AuthService {
   constructor(
     private prisma: PrismaService,
     private jwtService: JwtService,
+    private mailService: MailService,
   ) {}
 
   async signIn(email: string, password: string): Promise<AuthEntity> {
@@ -36,5 +41,23 @@ export class AuthService {
     return {
       accessToken: this.jwtService.sign({ userId: user.id }),
     };
+  }
+
+  async signUp(createUserDto: CreateUserDto): Promise<UserEntity> {
+    const hashedPassword = await hash(
+      createUserDto.password,
+      ROUNDS_OF_HASHING,
+    );
+
+    createUserDto.password = hashedPassword;
+
+    const token = Math.floor(1000 + Math.random() * 9000).toString();
+    // create user in db
+    // ...
+    // send confirmation mail
+    await this.mailService.sendUserConfirmation(createUserDto, token);
+    return this.prisma.user.create({
+      data: createUserDto,
+    });
   }
 }

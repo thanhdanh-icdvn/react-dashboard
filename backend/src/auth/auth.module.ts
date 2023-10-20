@@ -7,6 +7,7 @@ import { PrismaModule } from 'src/prisma/prisma.module';
 import { UsersModule } from 'src/users/users.module';
 import { JwtStrategy } from './jwt.strategy';
 import { JWT_SECRET } from 'src/constants';
+import { MailModule } from 'src/mail/mail.module';
 
 @Module({
   controllers: [AuthController],
@@ -21,6 +22,7 @@ import { JWT_SECRET } from 'src/constants';
       },
     }),
     UsersModule,
+    MailModule,
   ],
 })
 export class AuthModule {}
