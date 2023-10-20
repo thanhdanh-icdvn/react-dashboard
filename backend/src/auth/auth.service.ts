@@ -50,17 +50,7 @@ export class AuthService {
     );
 
     createUserDto.password = hashedPassword;
-
-    const token = Math.floor(1000 + Math.random() * 9000).toString();
-    // create user in db
-    // ...
-    // send confirmation mail
-    const sendEmail = await this.mailService.sendUserConfirmation(
-      createUserDto,
-      token,
-    );
-    console.log(sendEmail);
-    return await this.prisma.user.create({
+    return this.prisma.user.create({
       data: createUserDto,
     });
   }
