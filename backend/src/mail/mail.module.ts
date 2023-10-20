@@ -20,7 +20,7 @@ import { MailService } from './mail.service';
         from: `"No Reply" <${process.env.MAILER_SMTP_USER}>`,
       },
       template: {
-        dir: join(__dirname, 'template'),
+        dir: join(__dirname, 'dist/template'),
         adapter: new PugAdapter(),
         options: {
           strict: true,

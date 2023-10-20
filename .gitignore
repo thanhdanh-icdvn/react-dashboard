@@ -25,9 +25,7 @@ dist-ssr
 *.sw?
 .eslintcache
 storybook-static
-# env
 
-*/.env
-*/.env.*.local
-*/.env.test.local
-*/.env.production.local
+# env
+.env
+.env.*
