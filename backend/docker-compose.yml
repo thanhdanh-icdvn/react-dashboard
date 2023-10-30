@@ -1,6 +1,6 @@
 # docker-compose.yml
 
-version: '3.8'
+version: '3'
 services:
 
   postgres:
@@ -13,6 +13,42 @@ services:
       - postgres:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+    env_file:
+      - .env
+
+  nestjs-api:
+    container_name: nestjs
+    image: nestjs-api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      -  3000:3000
+    networks:
+      - nestjs
+    depends_on:
+      - postgres
+      - redis
+    command: npm run start:dev
+    env_file:
+      - .env
+
+  redis: # Name of container
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
 
 volumes:
   postgres:
+  redis:
+    driver: local
+
+networks:
+  postgres:
+  nestjs:
