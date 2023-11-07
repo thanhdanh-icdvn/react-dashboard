@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: frontend-react
+    image: frontend-react
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    volumes:
+      - ./src:/app/src

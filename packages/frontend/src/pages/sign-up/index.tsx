@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import clsx from 'clsx';
 import signUpStyles from '../sign-in/SignIn.module.scss';
 import { useState } from 'react';
@@ -110,6 +111,8 @@ export default function SignUp() {
                     checked: isChecked,
                   })}
                   checked={isChecked}
+                  name="remember"
+                  id="remember"
                 />
                 <span
                   className={clsx(signUpStyles.slider, signUpStyles.rounded)}
