@@ -40,5 +40,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-refresh/only-export-components': 'warn',
     'prettier/prettier': ['error'],
+    '@typescript-eslint/no-namespace': 'off',
   },
 };

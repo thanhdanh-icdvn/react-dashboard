@@ -12,3 +12,17 @@ services:
     restart: unless-stopped
     volumes:
       - ./src:/app/src
+  storybook:
+    container_name: frontend-storybook
+    image: frontend-storybook
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run storybook
+    ports:
+      - 6006:6006
+    restart: unless-stopped
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - frontend

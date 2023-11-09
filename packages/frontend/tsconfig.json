@@ -2,6 +2,9 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+    "types": [
+      "cypress"
+    ],
     "lib": [
       "ES2020",
       "DOM",
@@ -29,7 +32,8 @@
     },
   },
   "include": [
-    "src"
+    "src",
+    "./types/cypress.d.ts"
   ],
   "references": [
     {
