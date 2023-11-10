@@ -44,7 +44,7 @@ const config: Config = {
       },
     ],
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverageFrom: ['./src/**'],
   coveragePathIgnorePatterns: ['.*__snapshots__/.*'],
   testPathIgnorePatterns: ['node_modules', 'dist'],

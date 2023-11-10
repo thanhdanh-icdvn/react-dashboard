@@ -5,7 +5,8 @@
     "types": [
       "node",
       "jest",
-      "@testing-library/jest-dom"
+      "@testing-library/jest-dom",
+      // "cypress"
     ],
     "lib": [
       "ES2020",
@@ -36,7 +37,8 @@
   "include": [
     "src",
     "jest.config.ts",
-    "./global.d.ts"
+    "./global.d.ts",
+    // "./types/cypress.d.ts"
   ],
   "references": [
     {
