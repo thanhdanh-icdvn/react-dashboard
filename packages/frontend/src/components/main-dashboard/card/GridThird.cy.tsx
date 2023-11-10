@@ -1,4 +1,3 @@
-import React from 'react';
 import GridThird from './GridThird';
 
 describe('<GridThird />', () => {

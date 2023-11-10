@@ -3,7 +3,10 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "types": [
-      "cypress"
+      "node",
+      "jest",
+      "@testing-library/jest-dom",
+      "cypress",
     ],
     "lib": [
       "ES2020",
@@ -33,8 +36,9 @@
   },
   "include": [
     "src",
-    "./types/cypress.d.ts"
-  ],
+    "./types/cypress.d.ts",
+    "./jest.config.ts"
+, "src/__test__"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
