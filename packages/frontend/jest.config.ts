@@ -1,7 +1,6 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-  // preset: 'ts-jest',
   rootDir: process.cwd(),
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
@@ -42,17 +41,10 @@ const config: Config = {
             },
           },
         },
-        module: {
-          type: 'commonjs',
-          strict: false,
-          strictMode: true,
-          lazy: false,
-          noInterop: false,
-        },
       },
     ],
   },
-  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   collectCoverageFrom: ['./src/**'],
   coveragePathIgnorePatterns: ['.*__snapshots__/.*'],
   testPathIgnorePatterns: ['node_modules', 'dist'],

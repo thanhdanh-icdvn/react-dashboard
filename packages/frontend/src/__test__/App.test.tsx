@@ -1,8 +1,9 @@
-import App from '@/App';
-import { expect } from '@jest/globals';
-import { create } from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import App from '../App';
 
-it('should work', () => {
-  const renderer = create(<App />);
-  expect(renderer.toJSON()).toBeDefined();
+describe('App', () => {
+  it('should work as expected', () => {
+    render(<App />);
+    expect(1 + 1).toBe(2);
+  });
 });

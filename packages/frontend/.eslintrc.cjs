@@ -29,6 +29,7 @@ module.exports = {
     'jsx-a11y',
     'storybook',
     'prettier',
+    'jest-dom',
   ],
   settings: {
     react: {
@@ -42,4 +43,12 @@ module.exports = {
     'prettier/prettier': ['error'],
     '@typescript-eslint/no-namespace': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.test.js'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };
